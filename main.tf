@@ -46,5 +46,7 @@ resource "aws_elasticache_replication_group" "redis_cluster" {
 
   subnet_group_name = aws_elasticache_subnet_group.elasticache.name
   security_group_ids = [aws_security_group.elasticache_sg.id]
+
   kms_key_id = var.kms_key_id
+  at_rest_encryption_enabled = true
 }
