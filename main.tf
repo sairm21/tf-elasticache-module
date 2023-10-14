@@ -41,8 +41,8 @@ resource "aws_elasticache_replication_group" "redis_cluster" {
   parameter_group_name       = var.parameter_group_name
   automatic_failover_enabled = true
 
-  num_node_groups         = 2
-  replicas_per_node_group = 1
+  num_node_groups         = var.num_node_groups
+  replicas_per_node_group = var.replicas_per_node_group
 
   subnet_group_name = aws_elasticache_subnet_group.elasticache.name
   security_group_ids = [aws_security_group.elasticache_sg.id]

@@ -12,3 +12,5 @@ variable "node_type" {}
 variable "parameter_group_name" {}
 variable "engine_version" {}
 variable "engine" {}
+variable "num_node_groups" {}
+variable "replicas_per_node_group" {}
